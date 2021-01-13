@@ -1,0 +1,36 @@
+Write HEX via AVR ISP (arduino)
+sudo avrdude -c avrisp -P /dev/ttyACM0 -p usb646 -U flash:w:filename.hex:i -b 19200
+
+Read HEX via AVR ISP (ardino
+sudo avrdude -c avrisp -P /dev/ttyACM0 -p usb646 -U flash:r:filename.hex:i -b 19200
+
+flash firmware via DFU
+sudo dfu-programmer at90usb646 erase --force
+sudo dfu-programmer at90usb646 flash XO87_rgb.hex
+
+fix fuses (danger!)
+may need to inject clock signal on XTAL2 or XTAL1 (pins 23 or 24) from pin3 on arduino
+sudo avrdude -e -c avrisp -P /dev/ttyACM0 -p usb646 -U lfuse:w:0xDE:m -U hfuse:w:0xD3:m -U efuse:w:0xFB:m -b 19200
+
+ISP interface connector on board
+Top to bottom
+
+1 - pin 3 - UVcc
+2 - pin 11 - PCINT1/SCLK
+3 - pin 12 - PCINT2/MOSI
+4 - pin 13 - PCINT3/MISO
+5 - pin 20 - RESET
+6 - no connection
+7 - pin 6 - UGnd
+
+
+Arduino UNO
+
+1 - 5V
+2 - pin 13
+3 - pin 11
+4 - pin 12
+5 - pin 10
+6 - not used
+7 - GND
+* - pin 3 for injecting clock signal if needed (only if fuses are wrong)

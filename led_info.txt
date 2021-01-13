@@ -1,0 +1,9 @@
+20 - underglow 
+11 - bottom row - starts at right arrow
+13 - starts at left shift 
+13 - starts at return
+17 - starts at tab
+17 - starts at page up
+19 - top row (including indicator LEDs) starts at Escape - top - middle - bottom - f1 - etc
+------
+110 - total
