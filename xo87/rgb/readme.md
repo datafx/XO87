@@ -1,7 +1,7 @@
 # XO87 RGB PCB
 
 ***WARNING*** 
-This is not yet fully compatible with the default firmware.  Using this build is unsupported and could result in requiring ISP to reflash your board.  The original source has not been made available by the manufacturer and there is no known way to recover the factory firmware.  This code is a work in progress.
+This is not yet fully compatible with the default firmware.  To use this firmware, you MUST flash your board with an ISP flasher using the production hex file and you will no longer be able to use the factory firmware.  The original source has not been made available by the manufacturer and there is no known way to recover the factory firmware.  This code is a work in progress.
 ***WARNING***
 
 TKL custom keyboard made by Monstargear 
