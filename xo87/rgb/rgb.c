@@ -23,18 +23,18 @@
 #define noLed {255,255}
 
 led_config_t g_led_config = { {
-  // sc numlk cpslk sclk  f1   f2   f3   f4   f5   f6   f7     f8    f9    f10   f11   f12   prtscr scrl  brk
-  {  91,  92,  93,  94,  95,  96,  97,  98,  99,  100,  101,  102,  103,  104,  105,  106,  107,  108,  109 },
-  //tilde 1    2   3    4    5    6    7    8    9    0    -    =    bsp  ins  home  pgup
-  {  90,  89,  88, 87,  86,  85,  84,  83,  82,  81,  80,  79,  78,  77,  76,  75,  74 },
-  //tab   q    w    e    r    t    y    u    i    o    p    [    ]    /\   del   end  pgdn
-  {  57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  70,  71,  72,  73 },
-  //caps  a    s    d    f    g    h    j    k   l     ;    '    return
-  {  56,  55,  54,  53,  52,  51,  50,  49,  48,  47,  46,  45,  44 },
-  //lshift z   x    c    v    b    n    m    ,    .    /   rshift up
-  {  31,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,  43 },
-  //ctrl win  alt  space alt  win  mod  ctrl left down up
-  {  30,  29,  28,  27,  26,  25,  24,  23,  22,  21,  20 },
+  // esc  f1   f2   f3   f4   f5   f6   f7     f8    f9    f10   f11   f12   prtscr scrl  brk
+  {  91,  95,  96,  97,  98,  99,  100,  101,  102,  103,  104,  105,  106,  107,  108,  109 },
+  //tilde 1    2   3    4    5    6    7    8    9    0    -    =    ins  home  pgup
+  {  90,  89,  88, 87,  86,  85,  84,  83,  82,  81,  80,  79,  78,  76,  75,  74 },
+  //tab   q    w    e    r    t    y    u    i    o    p    [    ]    del   end  pgdn
+  {  57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  71,  72,  73 },
+  //caps  a    s    d    f    g    h    j    k   l     ;    '  return bspc
+  {  56,  55,  54,  53,  52,  51,  50,  49,  48,  47,  46,  45,  44,  77 },
+  //lshift z   x    c    v    b    n    m    ,    .    /   rshift  bsls  up   rctl
+  {  31,  NO_LED,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,  70,  43,  23 },
+  //ctrl win  alt  space alt  win  mod  left down right
+  {  30,  29,  28,  NO_LED,  NO_LED,  NO_LED,  27,  NO_LED,  NO_LED,  NO_LED,  26,  25,  24,  22,  21,  20 },
   //underglow
   {   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,  16,  17,  18,  19 }
 }, {
