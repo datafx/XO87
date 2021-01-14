@@ -21,16 +21,11 @@
 
 #include "quantum.h"
 
-//#define brightnessMax 8
-
 #define KEYLED_ROWS 6
 #define KEYLED_COLS 16
 
 #define XaxisMax 18
-#define YaxisMax 6//
-
-
-
+#define YaxisMax 6
 
 #define RhythmLedColumMax 18
 typedef struct{
@@ -59,7 +54,6 @@ typedef struct{
 #define Lseg4 C6
 #define Lseg5 D5
 
-
 #define Lcom0 C4
 #define Lcom1 C2
 #define Lcom2 C0
@@ -79,8 +73,6 @@ typedef struct{
 
 #define KEYLED_ROW_PINS { E5,B4, B5, F0, C6,D5 }//
 #define KEYLED_COL_PINS { C4,C2,C0,E0,D4,E4,B6,B2,F4,A0,F2,A4,F1,A7,D3,A3 }
-
-
 
 #define ox87( \
 	K000, K001, K002, K003, K004, K005, K006, K007, K008, K009, K010, K011, K012, K013, K014, K015, \
@@ -113,7 +105,6 @@ typedef struct{
 	{ K400,  KC_NO, K402,  K403,  K404,  K405,  K406,  K407,  K408,  K409,  K410,  K411,  K412,  K413,  K414,  K415 }, \
 	{ K500,  K501,  KC_NO, K503,  KC_NO, KC_NO, K506,  KC_NO, KC_NO, KC_NO, K510,  K511,  K512,  K513,  K514,  K515 }  \
 }
-
 
 extern void keyLedDriver(void);
 extern void KeyLedCom(void);
