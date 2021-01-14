@@ -21,12 +21,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define brightnessMax 8
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0x4250 // BP for Backprop
-#define PRODUCT_ID      0x5247 // RG for RGB
+#define VENDOR_ID       0x4D47 // MG for Monstargear
+#define PRODUCT_ID      0x584F // XO for XO87
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Monstargear
-#define PRODUCT         XO87
-#define DESCRIPTION     TKL custom keyboard
+#define PRODUCT         Monstargear XO87
+#define DESCRIPTION     Monstargear XO87
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100 // limits maximum brightness of LEDs to 100 out of 255. If not defined maximum brightness is set to 255
 #define RGBLIGHT_LIMIT_VAL 100 // limits maximum brightness of LEDs to 100 out of 255. If not defined maximum brightness is set to 255
 
@@ -57,7 +57,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // The number of LEDs connected
 #define DRIVER_LED_TOTAL 110
 
-//#define RGB_MATRIX_KEYPRESSES
+#define RGB_MATRIX_KEYPRESSES
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+
 
 /*
  * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
