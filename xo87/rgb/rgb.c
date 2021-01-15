@@ -1,4 +1,4 @@
-/* Copyright 2019 MechMerlin
+/* Copyright 2021 datafx
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,9 +31,9 @@ led_config_t g_led_config = { {
   {  57,  58,  59,  60,  61,  62,  63,  64,  65,  66,  67,  68,  69,  71,  72,  73 },
   //caps  a    s    d    f    g    h    j    k   l     ;    '  return bspc
   {  56,  55,  54,  53,  52,  51,  50,  49,  48,  47,  46,  45,  44,  77 },
-  //lshift z   x    c    v    b    n    m    ,    .    /   rshift  bsls  up   rctl
+  //lshift         z   x    c    v    b    n    m    ,    .    /   rshift  bsls  up  rctl
   {  31,  NO_LED,  32,  33,  34,  35,  36,  37,  38,  39,  40,  41,  42,  70,  43,  23 },
-  //ctrl win  alt  space alt  win  mod  left down right
+  //ctrl win  alt                             space                           alt  win  mod  left down right
   {  30,  29,  28,  NO_LED,  NO_LED,  NO_LED,  27,  NO_LED,  NO_LED,  NO_LED,  26,  25,  24,  22,  21,  20 },
   //underglow
   {   0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,  14,  15,  16,  17,  18,  19 }
@@ -82,17 +82,17 @@ void suspend_wakeup_init_kb(void) {
 void rgb_matrix_indicators_user(void) {
     led_t host_leds = host_keyboard_led_state();
     if (host_leds.scroll_lock) {
-        rgb_matrix_set_color(92, 0xFF, 0x0, 0x0);
+        rgb_matrix_set_color(92, 0x64, 0x0, 0x0);
     } else {
         rgb_matrix_set_color(92, 0x0, 0x0, 0x0);
     }
     if (host_leds.num_lock) {
-        rgb_matrix_set_color(93, 0xFF, 0x0, 0x0);
+        rgb_matrix_set_color(93, 0x64, 0x0, 0x0);
     } else {
         rgb_matrix_set_color(93, 0x0, 0x0, 0x0);
     }
     if (host_leds.caps_lock) {
-        rgb_matrix_set_color(94, 0xFF, 0x0, 0x0);
+        rgb_matrix_set_color(94, 0x64, 0x0, 0x0);
     } else {
         rgb_matrix_set_color(94, 0x0, 0x0, 0x0);
     }
