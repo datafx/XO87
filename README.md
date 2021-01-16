@@ -1,5 +1,5 @@
-# XO87
-Information and community source for Monstargear XO87 Hot-Swap PCB
+# XO87 Community Source Project
+Information and community source code for Monstargear XO87 Hot-Swap PCB
 
 ***WARNING***
 
