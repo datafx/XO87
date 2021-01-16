@@ -28,8 +28,8 @@
 #define DESCRIPTION     Monstargear XO87
 
 /* key matrix size */
-#define MATRIX_ROWS 7
-#define MATRIX_COLS 20
+#define MATRIX_ROWS 6
+#define MATRIX_COLS 16
 
 #define BACKLIGHT_PIN F5
 #define MATRIX_ROW_PINS { E6,E7, E3, B0, B1 ,A2}//
@@ -38,13 +38,13 @@
 #define DIODE_DIRECTION ROW2COL
 #define RGB_DI_PIN D7
 #define DRIVER_LED_TOTAL 110
-#define RGB_DISABLE_WHEN_USB_SUSPENDED true
 
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100 // limits maximum brightness of LEDs to 100 out of 255.
 #define RGBLIGHT_LIMIT_VAL 100 // limits maximum brightness of LEDs to 100 out of 255. 
 #define RGB_MATRIX_KEYPRESSES
 #define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGBLED_NUM 110
+#define RGB_DISABLE_WHEN_USB_SUSPENDED true
 
 #define DEBOUNCE 5
 #define LOCKING_SUPPORT_ENABLE
