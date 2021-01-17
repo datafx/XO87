@@ -1,6 +1,8 @@
 # XO87 Community Source Project
 Information and community source code for Monstargear XO87 Hot-Swap PCB
 
+There are open PRs with both QMK and VIA to offically add support for this PCB.  Regardless of acceptance, this repo will stay active to provide information, prebuilt firmware hex files, and the latest testing source code.
+
 ***WARNING***
 
 This firmware is not compatible with the default factory firmware.  Using this firmware is unsupported and will require an ISP reflash of your board.  The original source has not been made available by the manufacturer and there is no known way to restore the factory firmware at this time.  This code is a work in progress, but is being released so that anyone with a bricked board can restore most of the default functionality.  Suggestions and PRs are welcome.  Use at your own risk.
