@@ -16,7 +16,7 @@ If you are already on the newer firmware please use the file name "monstargear_x
 To do.
 
 * ~~Clean up and organize LED layout/pattern strangeness~~
-* Update documentation
+* ~~Update documentation~~
 * Find a way to flash from factory firmware without ISP flashing
 * Support for controlling individual LEDs
 * Support for soldered version of PCB
