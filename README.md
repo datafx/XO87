@@ -1,7 +1,7 @@
 # XO87 Community Source Project
-Information and community source code for Monstargear XO87 Hot-Swap PCB
+Information and community source code for Monstargear XO87 Hot-Swap and Solderable PCBs
 
-This board has been officially added to QMK, but this repo will stay active to provide information, prebuilt firmware hex files, and the latest testing source code.
+The Hot-Swap board has been officially added to QMK, but this repo will stay active to provide information, prebuilt firmware hex files, and the latest testing source code.
 
 ***WARNING***
 
