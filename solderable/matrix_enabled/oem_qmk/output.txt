@@ -1,0 +1,210 @@
+Making xo87/rgb with keymap default and target production
+
+avr-gcc (GCC) 10.2.0
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Compiling: keyboards/xo87/rgb/rgb.c                                                                keyboards/xo87/rgb/rgb.c: In function 'updateRgbBackLight':
+keyboards/xo87/rgb/rgb.c:150:9: warning: implicit declaration of function 'rgblight_buf_setrgb_at'; did you mean 'rgblight_setrgb_at'? [-Wimplicit-function-declaration]
+  150 |         rgblight_buf_setrgb_at(backLedRgbG.colorAG[i].r,backLedRgbG.colorAG[i].g,backLedRgbG.colorAG[i].b,i);
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+      |         rgblight_setrgb_at
+keyboards/xo87/rgb/rgb.c: In function 'checkKey':
+keyboards/xo87/rgb/rgb.c:171:1: warning: control reaches end of non-void function [-Wreturn-type]
+  171 | }
+      | ^
+At top level:
+keyboards/xo87/rgb/rgb.c:38:12: warning: 'maxAdress' defined but not used [-Wunused-variable]
+   38 | static u16 maxAdress=0xfea0;//最大64k
+      |            ^~~~~~~~~
+keyboards/xo87/rgb/rgb.c:37:12: warning: 'minAdress' defined but not used [-Wunused-variable]
+   37 | static u16 minAdress=0xfe80;//最小64k-4k
+      |            ^~~~~~~~~
+ [OK]
+make[1]: Warning: File 'keyboards/xo87/rgb/keymaps/default/keymap.c' has modification time 9932 s in the future
+Compiling: keyboards/xo87/rgb/keymaps/default/keymap.c                                             keyboards/xo87/rgb/keymaps/default/keymap.c: In function 'action_get_macro':
+keyboards/xo87/rgb/keymaps/default/keymap.c:136:13: warning: unused variable 'event' [-Wunused-variable]
+  136 |  keyevent_t event = record->event;
+      |             ^~~~~
+ [OK]
+Compiling: quantum/quantum.c                                                                        [OK]
+Compiling: quantum/keymap_common.c                                                                  [OK]
+Compiling: quantum/keycode_config.c                                                                 [OK]
+Compiling: quantum/matrix_common.c                                                                  [OK]
+Compiling: quantum/matrix.c                                                                         [OK]
+Compiling: quantum/debounce/sym_g.c                                                                 [OK]
+Compiling: quantum/color.c                                                                          [OK]
+Compiling: quantum/rgblight.c                                                                       [OK]
+Compiling: quantum/process_keycode/process_rgb.c                                                   quantum/process_keycode/process_rgb.c: In function 'process_rgb':
+quantum/process_keycode/process_rgb.c:97:17: warning: implicit declaration of function 'updateRgbBackLight' [-Wimplicit-function-declaration]
+   97 |                 updateRgbBackLight();
+      |                 ^~~~~~~~~~~~~~~~~~
+quantum/process_keycode/process_rgb.c: In function 'pcSetting':
+quantum/process_keycode/process_rgb.c:193:13: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  193 |             case RGB_MODE_REVERSE://循环切换模式 后 `RGB_RMOD`
+      |             ^~~~
+quantum/process_keycode/process_rgb.c:206:13: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  206 |             case RGB_HUD://降低色调
+      |             ^~~~
+quantum/process_keycode/process_rgb.c:217:13: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  217 |             case RGB_SAD://饱和-
+      |             ^~~~
+quantum/process_keycode/process_rgb.c:236:13: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  236 |             case RGB_VAD://亮度-
+      |             ^~~~
+quantum/process_keycode/process_rgb.c:239:13: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  239 |             case RGB_SPI:
+      |             ^~~~
+quantum/process_keycode/process_rgb.c:242:13: warning: case label value exceeds maximum value for type [-Wswitch-outside-range]
+  242 |             case RGB_SPD:
+      |             ^~~~
+quantum/process_keycode/process_rgb.c:168:14: warning: unused variable 'val' [-Wunused-variable]
+  168 |      uint8_t val;
+      |              ^~~
+quantum/process_keycode/process_rgb.c:166:14: warning: unused variable 'i' [-Wunused-variable]
+  166 |      uint8_t i;
+      |              ^
+quantum/process_keycode/process_rgb.c:164:14: warning: unused variable 'shifted' [-Wunused-variable]
+  164 |      uint8_t shifted =0;// get_mods() & MOD_MASK_SHIFT;
+      |              ^~~~~~~
+quantum/process_keycode/process_rgb.c:290:1: warning: control reaches end of non-void function [-Wreturn-type]
+  290 | }
+      | ^
+ [OK]
+Compiling: quantum/backlight/backlight.c                                                            [OK]
+Compiling: quantum/process_keycode/process_backlight.c                                              [OK]
+Compiling: quantum/backlight/backlight_driver_common.c                                              [OK]
+Compiling: quantum/backlight/backlight_avr.c                                                       quantum/backlight/backlight_avr.c:126:13: note: '#pragma message: Using hardware timer 1 with software PWM'
+  126 | #    pragma message "Using hardware timer 1 with software PWM"
+      |             ^~~~~~~
+ [OK]
+Compiling: drivers/avr/ws2812.c                                                                     [OK]
+Compiling: quantum/led_tables.c                                                                     [OK]
+Compiling: quantum/process_keycode/process_space_cadet.c                                            [OK]
+Compiling: quantum/process_keycode/process_magic.c                                                  [OK]
+Compiling: quantum/process_keycode/process_grave_esc.c                                              [OK]
+Compiling: tmk_core/common/host.c                                                                   [OK]
+Compiling: tmk_core/common/keyboard.c                                                               [OK]
+Compiling: tmk_core/common/action.c                                                                 [OK]
+Compiling: tmk_core/common/action_tapping.c                                                         [OK]
+Compiling: tmk_core/common/action_macro.c                                                           [OK]
+Compiling: tmk_core/common/action_layer.c                                                           [OK]
+Compiling: tmk_core/common/action_util.c                                                            [OK]
+Compiling: tmk_core/common/print.c                                                                  [OK]
+Compiling: tmk_core/common/debug.c                                                                  [OK]
+Compiling: tmk_core/common/sendchar_null.c                                                          [OK]
+Compiling: tmk_core/common/util.c                                                                   [OK]
+Compiling: tmk_core/common/eeconfig.c                                                               [OK]
+Compiling: tmk_core/common/report.c                                                                 [OK]
+Compiling: tmk_core/common/avr/suspend.c                                                            [OK]
+Compiling: tmk_core/common/avr/timer.c                                                              [OK]
+Compiling: tmk_core/common/avr/bootloader.c                                                         [OK]
+Assembling: tmk_core/common/avr/xprintf.S                                                           [OK]
+Compiling: tmk_core/common/bootmagic_lite.c                                                         [OK]
+Compiling: tmk_core/common/magic.c                                                                  [OK]
+Compiling: tmk_core/common/mousekey.c                                                               [OK]
+Compiling: tmk_core/common/command.c                                                                [OK]
+Compiling: tmk_core/protocol/lufa/lufa.c                                                            [OK]
+Compiling: tmk_core/protocol/usb_descriptor.c                                                       [OK]
+Compiling: tmk_core/protocol/lufa/outputselect.c                                                    [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Class/Common/HIDParser.c                                       [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.c                                        [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.c                                [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c                                      [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.c                                          [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.c                                    [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.c                                          [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.c                                 [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.c                                  [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/ConfigDescriptors.c                                       [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/DeviceStandardReq.c                                       [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/Events.c                                                  [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/HostStandardReq.c                                         [OK]
+Compiling: lib/lufa/LUFA/Drivers/USB/Core/USBTask.c                                                 [OK]
+Linking: .build/xo87_rgb_default.elf                                                                [OK]
+Creating load file for flashing: .build/xo87_rgb_default.hex                                        [OK]
+ [RM]      : Removing object files of "BootloaderDFU"
+rm -f obj/BootloaderDFU.o obj/Descriptors.o obj/BootloaderAPI.o obj/BootloaderAPITable.o obj/HIDParser.o obj/Device_AVR8.o obj/EndpointStream_AVR8.o obj/Endpoint_AVR8.o obj/Host_AVR8.o obj/PipeStream_AVR8.o obj/Pipe_AVR8.o obj/USBController_AVR8.o obj/USBInterrupt_AVR8.o obj/ConfigDescriptors.o obj/DeviceStandardReq.o obj/Events.o obj/HostStandardReq.o obj/USBTask.o
+ [RM]      : Removing dependency files of "BootloaderDFU"
+rm -f obj/BootloaderDFU.d obj/Descriptors.d obj/BootloaderAPI.d obj/BootloaderAPITable.d obj/HIDParser.d obj/Device_AVR8.d obj/EndpointStream_AVR8.d obj/Endpoint_AVR8.d obj/Host_AVR8.d obj/PipeStream_AVR8.d obj/Pipe_AVR8.d obj/USBController_AVR8.d obj/USBInterrupt_AVR8.d obj/ConfigDescriptors.d obj/DeviceStandardReq.d obj/Events.d obj/HostStandardReq.d obj/USBTask.d
+ [RM]      : Removing output files of "BootloaderDFU"
+rm -f BootloaderDFU.elf BootloaderDFU.hex BootloaderDFU.bin BootloaderDFU.eep BootloaderDFU.map BootloaderDFU.lss BootloaderDFU.sym libBootloaderDFU.a
+ [INFO]    : Begin compilation of project "BootloaderDFU"...
+
+avr-gcc (GCC) 10.2.0
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+ [GCC]     : Compiling C file "BootloaderDFU.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/BootloaderDFU.d BootloaderDFU.c -o obj/BootloaderDFU.o
+ [GCC]     : Compiling C file "Descriptors.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/Descriptors.d Descriptors.c -o obj/Descriptors.o
+ [GCC]     : Compiling C file "BootloaderAPI.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/BootloaderAPI.d BootloaderAPI.c -o obj/BootloaderAPI.o
+ [GAS]     : Assembling "BootloaderAPITable.S"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x assembler-with-cpp -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000   -MMD -MP -MF obj/BootloaderAPITable.d BootloaderAPITable.S -o obj/BootloaderAPITable.o
+ [GCC]     : Compiling C file "HIDParser.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/HIDParser.d ../../LUFA/Drivers/USB/Class/Common/HIDParser.c -o obj/HIDParser.o
+ [GCC]     : Compiling C file "Device_AVR8.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/Device_AVR8.d ../../LUFA/Drivers/USB/Core/AVR8/Device_AVR8.c -o obj/Device_AVR8.o
+ [GCC]     : Compiling C file "EndpointStream_AVR8.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/EndpointStream_AVR8.d ../../LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.c -o obj/EndpointStream_AVR8.o
+ [GCC]     : Compiling C file "Endpoint_AVR8.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/Endpoint_AVR8.d ../../LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.c -o obj/Endpoint_AVR8.o
+ [GCC]     : Compiling C file "Host_AVR8.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/Host_AVR8.d ../../LUFA/Drivers/USB/Core/AVR8/Host_AVR8.c -o obj/Host_AVR8.o
+ [GCC]     : Compiling C file "PipeStream_AVR8.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/PipeStream_AVR8.d ../../LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.c -o obj/PipeStream_AVR8.o
+ [GCC]     : Compiling C file "Pipe_AVR8.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/Pipe_AVR8.d ../../LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.c -o obj/Pipe_AVR8.o
+ [GCC]     : Compiling C file "USBController_AVR8.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/USBController_AVR8.d ../../LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.c -o obj/USBController_AVR8.o
+ [GCC]     : Compiling C file "USBInterrupt_AVR8.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/USBInterrupt_AVR8.d ../../LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.c -o obj/USBInterrupt_AVR8.o
+ [GCC]     : Compiling C file "ConfigDescriptors.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/ConfigDescriptors.d ../../LUFA/Drivers/USB/Core/ConfigDescriptors.c -o obj/ConfigDescriptors.o
+ [GCC]     : Compiling C file "DeviceStandardReq.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/DeviceStandardReq.d ../../LUFA/Drivers/USB/Core/DeviceStandardReq.c -o obj/DeviceStandardReq.o
+ [GCC]     : Compiling C file "Events.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/Events.d ../../LUFA/Drivers/USB/Core/Events.c -o obj/Events.o
+ [GCC]     : Compiling C file "HostStandardReq.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/HostStandardReq.d ../../LUFA/Drivers/USB/Core/HostStandardReq.c -o obj/HostStandardReq.o
+ [GCC]     : Compiling C file "USBTask.c"
+avr-gcc -c -pipe -gdwarf-2 -g2 -mmcu=at90usb646 -fshort-enums -fno-inline-small-functions -Wall -fno-strict-aliasing -funsigned-char -funsigned-bitfields -ffunction-sections -I. -DARCH=ARCH_AVR8 -DF_CPU=16000000UL -mrelax -fno-jump-tables -x c -Os -std=gnu99 -Wstrict-prototypes -DUSE_LUFA_CONFIG_HEADER -IConfig/ -DBOOT_START_ADDR=0xF000 -I. -I../../LUFA/.. -DARCH=ARCH_AVR8 -DBOARD=BOARD_QMK -DF_USB=16000000UL   -MMD -MP -MF obj/USBTask.d ../../LUFA/Drivers/USB/Core/USBTask.c -o obj/USBTask.o
+ [LNK]     : Linking object files into "BootloaderDFU.elf"
+avr-gcc obj/BootloaderDFU.o obj/Descriptors.o obj/BootloaderAPI.o obj/BootloaderAPITable.o obj/HIDParser.o obj/Device_AVR8.o obj/EndpointStream_AVR8.o obj/Endpoint_AVR8.o obj/Host_AVR8.o obj/PipeStream_AVR8.o obj/Pipe_AVR8.o obj/USBController_AVR8.o obj/USBInterrupt_AVR8.o obj/ConfigDescriptors.o obj/DeviceStandardReq.o obj/Events.o obj/HostStandardReq.o obj/USBTask.o -o BootloaderDFU.elf -lm -Wl,-Map=BootloaderDFU.map,--cref -Wl,--gc-sections -Wl,--relax -mmcu=at90usb646 -Wl,--section-start=.text=0xF000 -Wl,--section-start=.apitable_trampolines=0xFFA0 -Wl,--undefined=BootloaderAPI_Trampolines -Wl,--section-start=.apitable_jumptable=0xFFE0 -Wl,--undefined=BootloaderAPI_JumpTable -Wl,--section-start=.apitable_signatures=0xFFF8 -Wl,--undefined=BootloaderAPI_Signatures
+ [OBJCPY]  : Extracting HEX file data from "BootloaderDFU.elf"
+avr-objcopy -O ihex -R .eeprom -R .fuse -R .lock -R .signature BootloaderDFU.elf BootloaderDFU.hex
+ [OBJCPY]  : Extracting EEP file data from "BootloaderDFU.elf"
+avr-objcopy -O ihex -j .eeprom --set-section-flags=.eeprom="alloc,load" --change-section-lma .eeprom=0 --no-change-warnings BootloaderDFU.elf BootloaderDFU.eep || exit 0
+ [OBJCPY]  : Extracting BIN file data from "BootloaderDFU.elf"
+avr-objcopy -O binary -R .eeprom -R .fuse -R .lock -R .signature BootloaderDFU.elf BootloaderDFU.bin
+ [OBJDMP]  : Extracting LSS file data from "BootloaderDFU.elf"
+avr-objdump -h -d -S -z BootloaderDFU.elf > BootloaderDFU.lss
+ [NM]      : Extracting SYM file data from "BootloaderDFU.elf"
+avr-nm -n BootloaderDFU.elf > BootloaderDFU.sym
+ [SIZE]    : Determining size of "BootloaderDFU.elf"
+
+avr-size --mcu=at90usb646 --format=avr BootloaderDFU.elf
+AVR Memory Usage
+----------------
+Device: at90usb646
+
+Program:    3992 bytes (6.1% Full)
+(.text + .data + .bootloader)
+
+Data:        143 bytes (3.5% Full)
+(.data + .bss + .noinit)
+
+
+ [INFO]    : Finished building project "BootloaderDFU".
+BootloaderDFU.hex copied to xo87_rgb_default_bootloader.hex
+Copying xo87_rgb_default.hex to qmk_firmware folder                                                 [OK]
+File sizes:
+   text    data     bss     dec     hex filename
+      0   27194       0   27194    6a3a xo87_rgb_default.hex
+      0    4048       0    4048     fd0 xo87_rgb_default_bootloader.hex
+      0   31242       0   31242    7a0a xo87_rgb_default_production.hex
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
