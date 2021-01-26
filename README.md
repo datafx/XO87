@@ -20,3 +20,4 @@ To do.
 * Find a way to flash from factory firmware without ISP flashing
 * Support for controlling individual LEDs
 * ~~Support for soldered version of PCB~~ - Partial
+* Full support for LED matrix on soldered board
