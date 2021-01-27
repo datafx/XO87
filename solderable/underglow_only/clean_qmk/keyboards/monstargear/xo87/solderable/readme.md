@@ -15,6 +15,8 @@ Make example for this keyboard (after setting up your build environment):
 Flashing example for this keyboard:
 
     make monstargear/xo87/solderable:default:flash
+    
+The LED matrix is not yet working with this board.  A temporary workaround to allow the caps/scroll/num lock LEDs to work has been added to allow this firmware to be functional without the led matrix.
 
 Please be aware that Monstar Gear has not yet switched to this firmware and any PCB that is running the pre-installed firmware will need to use ISP to flash their board for the first time.
 
