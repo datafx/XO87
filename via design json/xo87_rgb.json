@@ -3,7 +3,7 @@
   "vendorId": "0x4D47",
   "productId": "0x584F",
   "lighting": {
-    "extends":"qmk_rgblight",
+    "extends":"qmk_backlight_rgblight",
     "underglowEffects": [
       ["None", 0],
       ["SOLID_COLOR", 1],
