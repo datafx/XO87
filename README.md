@@ -11,7 +11,7 @@ If you wish to compile your own firmware, you can download QMK from https://gith
 
 If you are on the old firmware and using an ISP flasher, please flash the file "monstargear_xo87_rgb_via_production.hex".  This file contains both the firmware and bootloader.
 
-If you are already on the newer firmware please use the file name "monstargear_xo87_rgb_via.hex".  This file is able to be used through QMK toolbox.
+If you are already on the newer firmware please use the file name "monstargear_xo87_rgb_via.hex".  This file is able to be used through QMK toolbox.  If you prefer to use Vial instead of VIA, you can flash "monstargear_xo87_rgb_vial.hex" which is compiled with support for both tools.
 
 To do.
 
